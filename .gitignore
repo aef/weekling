@@ -1,0 +1,7 @@
+# Project metadata
+nbproject
+.idea
+
+doc
+**/*.gem
+**/*.rbc
