@@ -3,5 +3,6 @@ nbproject
 .idea
 
 doc
+.yardoc
 **/*.gem
 **/*.rbc
