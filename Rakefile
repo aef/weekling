@@ -29,12 +29,9 @@ of the authors and should not be interpreted as representing official policies,
 either expressed or implied, of the Weekling Project.
 =end
 
-require 'bundler'
-
-Bundler.setup
-
 require 'rake'
 require 'pathname'
+require 'bundler/gem_tasks'
 require 'yard'
 require 'rspec/core/rake_task'
 
@@ -50,10 +47,10 @@ end
 
 desc "Removes temporary project files"
 task :clean do
-  doc = Pathname.new('doc')
-  doc.rmtree if doc.exist?
-  yardoc = Pathname.new('.yardoc')
-  yardoc.rmtree if yardoc.exist?
+  %w{doc pkg .yardoc}.map{|name| Pathname.new(name) }.each do |path|
+    path.rmtree if path.exist?
+  end
+
   Pathname.glob('*.gem').each &:delete
   Pathname.glob('**/*.rbc').each &:delete
 end

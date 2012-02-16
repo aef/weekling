@@ -4,6 +4,6 @@ nbproject
 
 doc
 coverage
+pkg
 .yardoc
-*.gem
-**/*.rbc
+*.rbc
