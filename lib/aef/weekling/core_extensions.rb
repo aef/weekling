@@ -29,6 +29,12 @@ of the authors and should not be interpreted as representing official policies,
 either expressed or implied, of the Weekling Project.
 =end
 
-source 'http://rubygems.org'
+module Aef
+  module Weekling
 
-gemspec
+    # Namespace for extension modules for Ruby's core classes.
+    module CoreExtensions
+
+    end
+  end
+end

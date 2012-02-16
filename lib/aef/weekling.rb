@@ -29,6 +29,27 @@ of the authors and should not be interpreted as representing official policies,
 either expressed or implied, of the Weekling Project.
 =end
 
-source 'http://rubygems.org'
+# Namespace for projects of Alexander E. Fischer <aef@raxys.net>
+#
+# If you want to be able to simply type Example instead of Aef::Example to
+# address classes in this namespace simply write the following before using the
+# classes:
+#
+#  include Aef
+module Aef
+  
+  # Namespace for components of the weekling gem  
+  module Weekling
 
-gemspec
+    # The currently loaded library version
+    VERSION = '1.0.0rc1'.freeze
+
+  end
+end
+
+require 'time'
+require 'aef/weekling/year'
+require 'aef/weekling/week'
+require 'aef/weekling/week_day'
+require 'aef/weekling/core_extensions/to_year'
+require 'aef/weekling/core_extensions/to_week_and_week_day'

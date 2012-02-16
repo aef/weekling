@@ -1,8 +1,6 @@
-# encoding: UTF-8
-=begin
 Copyright Alexander E. Fischer <aef@raxys.net>, 2012
 
-This file is part of Weekling.
+Weekling is licensed under the following 2-clause BSD license:
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -27,8 +25,3 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 The views and conclusions contained in the software and documentation are those
 of the authors and should not be interpreted as representing official policies,
 either expressed or implied, of the Weekling Project.
-=end
-
-source 'http://rubygems.org'
-
-gemspec

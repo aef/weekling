@@ -29,6 +29,25 @@ of the authors and should not be interpreted as representing official policies,
 either expressed or implied, of the Weekling Project.
 =end
 
-source 'http://rubygems.org'
+module Aef
+  module Weekling
+    module CoreExtensions
 
-gemspec
+      # This module allows date-like objects to be extended to support
+      # to_year, to_week and to_week_day.
+      module ToWeekAndWeekDay
+  
+        # Constructs an Aef::Weekling::Week from the object.
+        def to_week
+          Week.new(self)
+        end
+    
+        # Constructs an Aef::Weekling::Week::Day from the object.
+        def to_week_day
+          WeekDay.new(self)
+        end
+
+      end
+    end
+  end
+end

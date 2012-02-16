@@ -29,6 +29,20 @@ of the authors and should not be interpreted as representing official policies,
 either expressed or implied, of the Weekling Project.
 =end
 
-source 'http://rubygems.org'
+module Aef
+  module Weekling
+    module CoreExtensions
 
-gemspec
+      # This module allows integer-like objects to be extended to support
+      # to_year.
+      module ToYear
+  
+        # Constructs an Aef::Weekling::Year from the object.
+        def to_year
+          Year.new(self)
+        end
+  
+      end
+    end
+  end
+end

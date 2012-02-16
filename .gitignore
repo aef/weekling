@@ -3,6 +3,7 @@ nbproject
 .idea
 
 doc
+coverage
 .yardoc
-**/*.gem
+*.gem
 **/*.rbc
