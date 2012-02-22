@@ -49,22 +49,30 @@ by default.
 
 In most cases you want to load the library by the following command:
 
-    require 'weekling'
+~~~~~ ruby
+require 'weekling'
+~~~~~
 
 In a bundler Gemfile you should use the following:
 
-    gem 'weekling'
+~~~~~ ruby
+gem 'weekling'
+~~~~~
 
 By default, Weekling extends the Date, DateTime and Time classes to allow their
 objects to be castable to Week and Week::Day. Additionally the Aef namespace is
 included into Object, so that you don't have to type the fully-qualified names
 of the classes. Should you really don't want this, use the following:
 
-    require 'weekling/bare'
+~~~~~ ruby
+require 'weekling/bare'
+~~~~~
 
 Or for bundler Gemfiles:
 
-    gem 'weekling', require: 'weekling/bare'
+~~~~~ ruby
+gem 'weekling', require: 'weekling/bare'
+~~~~~
 
 The following examples are written for those who use the normal mode. If you
 use the bare mode, you need to add Aef::Weekling in front of every class name.
@@ -73,104 +81,130 @@ use the bare mode, you need to add Aef::Weekling in front of every class name.
 
 A Year object is constructed either by a date-like or and integer-like object:
 
-```ruby
+~~~~~ ruby
 year = Year.new(Time.new(2014, 3, 12))
 # => #<Aef::Weekling::Year: 2014>
 
 year = Year.new(2014)
 # => #<Aef::Weekling::Year: 2014>
-```
+~~~~~
 
 To get an Integer or String representation simply use the following:
 
-    year.to_i
-    # => 2014
+~~~~~ ruby
+year.to_i
+# => 2014
 
-    year.to_s
-    # => "2014"
+year.to_s
+# => "2014"
+~~~~~
 
 The next or previous years can be accessed by the respective methods:
 
-    year.next
-    # => #<Aef::Weekling::Year: 2015>
+~~~~~ ruby
+year.next
+# => #<Aef::Weekling::Year: 2015>
 
-    year.previous
-    # => #<Aef::Weekling::Year: 2013>
+year.previous
+# => #<Aef::Weekling::Year: 2013>
+~~~~~
 
 You can also add or subtract amounts of years to get another year object:
 
-    year + 5
-    # => #<Aef::Weekling::Year: 2019>
+~~~~~ ruby
+year + 5
+# => #<Aef::Weekling::Year: 2019>
 
-    year - 7
-    # => #<Aef::Weekling::Year: 2007>
+year - 7
+# => #<Aef::Weekling::Year: 2007>
+~~~~~
 
 The year is also able to tell you if it is even or odd:
 
-    year.even?
-    # => true
+~~~~~ ruby
+year.even?
+# => true
 
-    year.odd?
-    # => false
+year.odd?
+# => false
+~~~~~
 
 The year also knows how many weeks it has:
 
-    year.week_count
-    # => 52
+~~~~~ ruby
+year.week_count
+# => 52
+~~~~~
 
 Or if it is a leap year:
 
-    year.leap?
-    # => false
+~~~~~ ruby
+year.leap?
+# => false
+~~~~~
 
 ### Weeks
 
 You can either get an enumerable list of weeks from an existing year:
 
-    year.weeks
-    # => #<Aef::Weekling::Week: 2014-W01>..#<Aef::Weekling::Week: 2014-W52>
+~~~~~ ruby
+year.weeks
+# => #<Aef::Weekling::Week: 2014-W01>..#<Aef::Weekling::Week: 2014-W52>
+~~~~~
 
 Or request individual weeks from a year object:
 
-    year.week(30)
-    # => #<Aef::Weekling::Week: 2014-W30>
+~~~~~ ruby
+year.week(30)
+# => #<Aef::Weekling::Week: 2014-W30>
+~~~~~
 
 Or you can construct a week by year and index (week number):
 
-    week = Week.new(2012, 37)
-    # => #<Aef::Weekling::Week: 2012-W37>
+~~~~~ ruby
+week = Week.new(2012, 37)
+# => #<Aef::Weekling::Week: 2012-W37>
+~~~~~
 
 To regain the year or index you can simply access the attributes:
 
-    week.year
-    # => #<Aef::Weekling::Year: 2012>
+~~~~~ ruby
+week.year
+# => #<Aef::Weekling::Year: 2012>
 
-    week.index
-    # => 37
+week.index
+# => 37
+~~~~~
 
 The next or previous weeks can be accessed by the respective methods:
 
-    week.next
-    # => #<Aef::Weekling::Week: 2012-W38>
+~~~~~ ruby
+week.next
+# => #<Aef::Weekling::Week: 2012-W38>
 
-    week.previous
-    # => #<Aef::Weekling::Week: 2012-W36>
+week.previous
+# => #<Aef::Weekling::Week: 2012-W36>
+~~~~~
 
 You can also add or subtract amounts of weeks to get another week object:
 
-    week + 5
-    # => #<Aef::Weekling::Week: 2012-W42>
+~~~~~ ruby
+week + 5
+# => #<Aef::Weekling::Week: 2012-W42>
 
-    week - 7
-    # => #<Aef::Weekling::Week: 2012-W30>
+week - 7
+# => #<Aef::Weekling::Week: 2012-W30>
+~~~~~
 
 The week is also able to tell you if it is even or odd:
 
-    week.even?
-    # => false
+~~~~~ ruby
+week.even?
+# => false
 
-    week.odd?
-    # => true
+week.odd?
+# => true
+~~~~~
 
 You can also construct a range of weeks starting with the current, which can be
 iterated through or which can be easily converted to an Array. The range will
@@ -178,84 +212,104 @@ run until given index in the future is reached. Notice that this means, if the
 given index is lower or equal to the current, the end of the range will be in
 the following year:
 
-    week.until_index(45)
-    # => #<Aef::Weekling::Week: 2012-W37>..#<Aef::Weekling::Week: 2012-W45>
+~~~~~ ruby
+week.until_index(45)
+# => #<Aef::Weekling::Week: 2012-W37>..#<Aef::Weekling::Week: 2012-W45>
 
-    week.until_index(11)
-    # => #<Aef::Weekling::Week: 2012-W37>..#<Aef::Weekling::Week: 2013-W11>
+week.until_index(11)
+# => #<Aef::Weekling::Week: 2012-W37>..#<Aef::Weekling::Week: 2013-W11>
+~~~~~
 
 ### Week-days
 
 You can either get an enumerable list of week-days from an existing week:
 
-    week.days
-    # => #<Aef::Weekling::WeekDay: 2012-W37-1>..#<Aef::Weekling::WeekDay: 2012-W37-7>
+~~~~~ ruby
+week.days
+# => #<Aef::Weekling::WeekDay: 2012-W37-1>..#<Aef::Weekling::WeekDay: 2012-W37-7>
 
-    week.weekend
-    # => [#<Aef::Weekling::WeekDay: 2012-W37-6>, #<Aef::Weekling::WeekDay: 2012-W37-7>]
+week.weekend
+# => [#<Aef::Weekling::WeekDay: 2012-W37-6>, #<Aef::Weekling::WeekDay: 2012-W37-7>]
+~~~~~
 
 Or request individual week-days from a week object:
 
-    week.day(3)
-    # => #<Aef::Weekling::WeekDay: 2012-W37-3>
+~~~~~ ruby
+week.day(3)
+# => #<Aef::Weekling::WeekDay: 2012-W37-3>
 
-    week.day(:friday)
-    # => #<Aef::Weekling::WeekDay: 2012-W37-5>
+week.day(:friday)
+# => #<Aef::Weekling::WeekDay: 2012-W37-5>
 
-    week.monday
-    # => #<Aef::Weekling::WeekDay: 2012-W37-1>
+week.monday
+# => #<Aef::Weekling::WeekDay: 2012-W37-1>
+~~~~~
 
 Or you can create a week-day by year, week and day. The day can be an index
 between 1 and 7 (monday to sunday), or the lower-case english name of the day
 as symbol. Example below:
 
-    week_day = WeekDay.new(2012, 37, 4)
-    # => #<Aef::Weekling::WeekDay: 2012-W37-4>
+~~~~~ ruby
+week_day = WeekDay.new(2012, 37, 4)
+# => #<Aef::Weekling::WeekDay: 2012-W37-4>
 
-    week_day = WeekDay.new(2012, 37, :thursday)
-    # => #<Aef::Weekling::WeekDay: 2012-W37-4>
+week_day = WeekDay.new(2012, 37, :thursday)
+# => #<Aef::Weekling::WeekDay: 2012-W37-4>
+~~~~~
 
 To regain the week and the index you can access the attributes:
 
-    week_day.week
-    # => #<Aef::Weekling::Week: 2012-W37>
+~~~~~ ruby
+week_day.week
+# => #<Aef::Weekling::Week: 2012-W37>
 
-    week_day.index
-    # => 4
+week_day.index
+# => 4
+~~~~~
 
 If you want the symbolized name instead, use the following:
 
-    week_day.to_sym
-    # => :thursday
+~~~~~ ruby
+week_day.to_sym
+# => :thursday
+~~~~~
 
 As in weeks you can get the next and previous day the following way:
 
-    week_day.next
-    # => #<Aef::Weekling::WeekDay: 2012-W37-5>
+~~~~~ ruby
+week_day.next
+# => #<Aef::Weekling::WeekDay: 2012-W37-5>
 
-    week_day.previous
-    # => #<Aef::Weekling::WeekDay: 2012-W37-3>
+week_day.previous
+# => #<Aef::Weekling::WeekDay: 2012-W37-3>
+~~~~~
 
 You can also add or subtract amounts of week-days to get another week-day object:
 
-    week_day + 5
-    # => #<Aef::Weekling::WeekDay: 2012-W38-2>
+~~~~~ ruby
+week_day + 5
+# => #<Aef::Weekling::WeekDay: 2012-W38-2>
 
-    week_day - 7
-    # => #<Aef::Weekling::WeekDay: 2012-W36-4>
+week_day - 7
+# => #<Aef::Weekling::WeekDay: 2012-W36-4>
+~~~~~
 
 Each week-day can be converted to a regular date easily:
 
-    week_day.to_date
-    # => #<Date: 2012-09-13 (…)>
+~~~~~ ruby
+week_day.to_date
+# => #<Date: 2012-09-13 (…)>
+~~~~~
 
 You can ask a week-day if it is a specific day in week:
 
-    week_day.tuesday?
-    # => false
+~~~~~ ruby
+week_day.tuesday?
+# => false
 
-    week_day.thursday?
-    # => true
+week_day.thursday?
+# => true
+~~~~~
 
 Requirements
 ------------
