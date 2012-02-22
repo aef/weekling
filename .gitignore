@@ -6,4 +6,5 @@ doc
 coverage
 pkg
 .yardoc
+.rbx
 *.rbc
