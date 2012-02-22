@@ -1,6 +1,9 @@
 Weekling
 ========
 
+[![Build Status](https://secure.travis-ci.org/aef/weekling.png)](
+https://secure.travis-ci.org/aef/weekling)
+
 * [Documentation][1]
 * [Project][2]
 
@@ -20,13 +23,13 @@ Features / Problems
 This projects tries to conform to:
 
 * [Semantic Versioning (2.0.0-rc.1)][5]
-* [Ruby Style Guide][6]
-* [Ruby Packaging Standard][7]
+* [Ruby Packaging Standard (0.5-draft)][6]
+* [Ruby Style Guide][7]
 * [Gem Packaging: Best Practices][8]
 
    [5]: http://semver.org/
-   [6]: https://github.com/bbatsov/ruby-style-guide
-   [7]: http://chneukirchen.github.com/rps/
+   [6]: http://chneukirchen.github.com/rps/
+   [7]: https://github.com/bbatsov/ruby-style-guide
    [8]: http://weblog.rubyonrails.org/2009/9/1/gem-packaging-best-practices
 
 Additional facts:
@@ -328,26 +331,14 @@ Copyright Alexander E. Fischer <aef@raxys.net>, 2012
 
 This file is part of Weekling.
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
 
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-The views and conclusions contained in the software and documentation are those
-of the authors and should not be interpreted as representing official policies,
-either expressed or implied, of the Weekling Project.
+THE SOFTWARE IS PROVIDED "AS IS" AND ISC DISCLAIMS ALL WARRANTIES WITH REGARD
+TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS. IN NO EVENT SHALL ISC BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR
+CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE,
+DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+SOFTWARE.
