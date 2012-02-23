@@ -17,13 +17,15 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 =end
 
-# Namespace for projects of Alexander E. Fischer <aef@raxys.net>
-#
+# Namespace for projects of Alexander E. Fischer <aef@raxys.net>.
+# 
 # If you want to be able to simply type Example instead of Aef::Example to
 # address classes in this namespace simply write the following before using the
-# classes:
+# classes.
 #
-#  include Aef
+# @example Including the namespace
+#   include Aef
+# @author Alexander E. Fischer
 module Aef
   
   # Namespace for components of the weekling gem  
