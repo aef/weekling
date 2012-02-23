@@ -117,7 +117,7 @@ describe Aef::Weekling::WeekDay do
     end
 
     it "should allow to create a weekday by a given Date object" do
-      date = Date.new(2011, 04, 06)
+      date = Date.new(2011, 4, 6)
 
       week_day = described_class.new(date)
       week_day.week.should  eql Aef::Weekling::Week.new(2011, 14)
@@ -125,7 +125,7 @@ describe Aef::Weekling::WeekDay do
     end
 
     it "should allow to create a weekday by a given DateTime object" do
-      datetime = DateTime.new(2011, 04, 06, 16, 45, 30)
+      datetime = DateTime.parse('2011-04-06T16:45:30')
 
       week_day = described_class.new(datetime)
       week_day.week.should  eql Aef::Weekling::Week.new(2011, 14)
@@ -133,7 +133,7 @@ describe Aef::Weekling::WeekDay do
     end
 
     it "should allow to create a weekday by a given Time object" do
-      datetime = Time.new(2011, 04, 06, 16, 45, 30)
+      datetime = Time.parse('2011-04-06T16:45:30')
 
       week_day = described_class.new(datetime)
       week_day.week.should  eql Aef::Weekling::Week.new(2011, 14)
