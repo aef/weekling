@@ -17,8 +17,10 @@ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
 SOFTWARE.
 =end
 
-require 'simplecov'
-SimpleCov.start
+unless defined?(Rubinius)
+  require 'simplecov'
+  SimpleCov.start
+end
 
 require 'rspec'
 require 'pry'
