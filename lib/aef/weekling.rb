@@ -32,6 +32,9 @@ module Aef
   module Weekling
 
     # The currently loaded library version
+    #
+    # Using Semantic Versioning (2.0.0-rc.1) rules
+    # @see http://semver.org/
     VERSION = '1.0.0'.freeze
 
   end
