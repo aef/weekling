@@ -29,7 +29,7 @@ YARD::Rake::YardocTask.new('doc')
 
 desc "Removes temporary project files"
 task :clean do
-  %w{doc coverage pkg .yardoc .rbx}.map{|name| Pathname.new(name) }.each do |path|
+  %w{doc coverage pkg .yardoc .rbx Gemfile.lock}.map{|name| Pathname.new(name) }.each do |path|
     path.rmtree if path.exist?
   end
 
