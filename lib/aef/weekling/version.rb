@@ -17,17 +17,14 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 =end
 
-# Helper file to allow loading by gem name. Includes namespace Aef::Weekling
-# into Object and extends Date, DateTime and Time to support to_year, to_week
-# and to_week_day.
+module Aef
+  module Weekling
 
-require 'aef/weekling'
+    # The currently loaded library version
+    #
+    # Using Semantic Versioning (2.0.0-rc.1) rules
+    # @see http://semver.org/
+    VERSION = '1.0.1'.freeze
 
-Object.send(:include, Aef::Weekling)
-
-Integer.send(:include, Aef::Weekling::CoreExtensions::ToYear)
-
-[Date, Time, DateTime].each do |klass|
-  klass.send(:include, Aef::Weekling::CoreExtensions::ToYear)
-  klass.send(:include, Aef::Weekling::CoreExtensions::ToWeekAndWeekDay)
+  end
 end

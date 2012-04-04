@@ -1,5 +1,7 @@
 # encoding: UTF-8
 =begin
+Copyright Alexander E. Fischer <aef@raxys.net>, 2012
+
 This file is part of Weekling.
 
 Permission to use, copy, modify, and/or distribute this software for any
@@ -15,9 +17,7 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 =end
 
-$LOAD_PATH << 'lib'
-
-require 'weekling/bare'
+require File.expand_path('../lib/aef/weekling/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'weekling'
@@ -42,13 +42,14 @@ week-days are interpreted as in ISO 8601.
   s.executables   = `git ls-files -- bin/*`.lines.map{|f| File.basename(f.chomp) }
   s.require_paths = ["lib"]
 
-  s.add_development_dependency('bundler', '~> 1.0.21')
+  s.required_ruby_version = '>= 1.9.2'
+
+  s.add_development_dependency('bundler', '~> 1.1.3')
   s.add_development_dependency('rake', '~> 0.9.2')
-  s.add_development_dependency('rspec', '~> 2.6.0')
-  s.add_development_dependency('simplecov', '~> 0.5.4')
+  s.add_development_dependency('rspec', '~> 2.8.0')
+  s.add_development_dependency('simplecov', '~> 0.6.1')
   s.add_development_dependency('pry', '~> 0.9.8')
   s.add_development_dependency('yard', '~> 0.7.5')
-  s.add_development_dependency('maruku', '~> 0.6.0')
 
   s.cert_chain = "#{ENV['GEM_CERT_CHAIN']}".split(':')
   s.signing_key = ENV['GEM_SIGNING_KEY']

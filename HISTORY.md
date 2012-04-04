@@ -1,10 +1,11 @@
 1.0.1 / 2012-02-24
 ==================
 
-* 2 minor enhancements
+* 3 minor enhancements
 
   * Improved documentation
   * Removed Gemfile.lock for greater flexibility
+  * Made separate version.rb file
 
 1.0.0 / 2012-02-24
 ==================

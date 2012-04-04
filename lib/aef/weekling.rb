@@ -17,6 +17,8 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 =end
 
+require 'time'
+
 # Namespace for projects of Alexander E. Fischer <aef@raxys.net>.
 # 
 # If you want to be able to simply type Example instead of Aef::Example to
@@ -31,16 +33,10 @@ module Aef
   # Namespace for components of the weekling gem  
   module Weekling
 
-    # The currently loaded library version
-    #
-    # Using Semantic Versioning (2.0.0-rc.1) rules
-    # @see http://semver.org/
-    VERSION = '1.0.1'.freeze
-
   end
 end
 
-require 'time'
+require 'aef/weekling/version'
 require 'aef/weekling/year'
 require 'aef/weekling/week'
 require 'aef/weekling/week_day'
