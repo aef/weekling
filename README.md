@@ -61,10 +61,11 @@ In a bundler Gemfile you should use the following:
 gem 'weekling'
 ~~~~~
 
-By default, Weekling extends the Date, DateTime and Time classes to allow their
-objects to be castable to Week and Week::Day. Additionally the Aef namespace is
-included into Object, so that you don't have to type the fully-qualified names
-of the classes. Should you really don't want this, use the following:
+By default, Weekling extends the Integer, Date, DateTime and Time classes to
+allow their objects to be castable to Year, Week and WeekDay. Additionally the
+Aef namespace is included into Object, so that you don't have to type the
+fully-qualified names of the classes. Should you really don't want this, use
+the following:
 
 ~~~~~ ruby
 require 'weekling/bare'
@@ -365,7 +366,7 @@ If something goes wrong you should be noticed through failing examples.
 Development
 -----------
 
-### Bugs Reports and Feature Requests
+### Bug reports and feature requests
 
 Please use the [issue tracker][issues] on github.com to let me know about errors
 or ideas for improvement of this software.
