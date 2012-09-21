@@ -119,6 +119,22 @@ describe Aef::Weekling::Week do
       week.index.should eql date.cweek
     end
 
+    it "should be able to initialize the last week of a year by a given Date object which is already in the following year" do
+      date = Date.new(1802, 1, 1)
+      week = described_class.new(date)
+
+      week.year.should eql Aef::Weekling::Year.new(1801)
+      week.index.should eql 53
+    end
+
+    it "should be able to initialize the first week of a year by a given Date object which is still in the previous year" do
+      date = Date.new(2008, 12, 30)
+      week = described_class.new(date)
+
+      week.year.should eql Aef::Weekling::Year.new(2009)
+      week.index.should eql 1
+    end
+
     it "should be able to initialize a week by a given DateTime object" do
       date = DateTime.now
       week = described_class.new(date)

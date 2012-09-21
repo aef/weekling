@@ -86,7 +86,7 @@ module Aef
             @index = object.index.to_i
           elsif object.respond_to?(:to_date)
             date = object.to_date
-            @year  = Year.new(date.year)
+            @year  = Year.new(date.cwyear)
             @index = date.cweek
           else
             raise ArgumentError, 'A single argument must either respond to #year and #index or to #to_date'

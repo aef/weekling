@@ -124,6 +124,22 @@ describe Aef::Weekling::WeekDay do
       week_day.index.should eql 3
     end
 
+    it "should be able to initialize a weekday within the last week of a year by a given Date object which is already in the following year" do
+      date = Date.new(1802, 1, 1)
+
+      week_day = described_class.new(date)
+      week_day.week.should  eql Aef::Weekling::Week.new(1801, 53)
+      week_day.index.should eql 5
+    end
+
+    it "should be able to initialize a weekday within the first week of a year by a given Date object which is still in the previous year" do
+      date = Date.new(2008, 12, 30)
+
+      week_day = described_class.new(date)
+      week_day.week.should  eql Aef::Weekling::Week.new(2009, 1)
+      week_day.index.should eql 2
+    end
+
     it "should allow to create a weekday by a given DateTime object" do
       datetime = DateTime.parse('2011-04-06T16:45:30')
 
