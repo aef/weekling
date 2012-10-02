@@ -3,11 +3,12 @@ Weekling
 
 [![Build Status](https://secure.travis-ci.org/aef/weekling.png)](
 https://secure.travis-ci.org/aef/weekling)
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/aef/weekling)
 
 * [Documentation][docs]
 * [Project][project]
 
-   [docs]:    http://rdoc.info/projects/aef/weekling/
+   [docs]:    http://rdoc.info/github/aef/weekling/
    [project]: https://github.com/aef/weekling/
 
 Description
@@ -375,11 +376,27 @@ or ideas for improvement of this software.
 
 ### Source code
 
-This software is developed in the source code management system git hosted
-at github.com. You can download the most recent sourcecode through the
-following command:
+This software is developed in the source code management system Git. There are
+several synchronized mirror repositories available:
 
-    git clone https://github.com/aef/weekling.git
+* GitHub
+    
+    URL: https://github.com/aef/weekling.git
+
+* Gitorious
+    
+    URL: https://git.gitorious.org/weekling/weekling.git
+
+* BitBucket
+    
+    URL: https://bitbucket.org/alefi/weekling.git
+
+You can get the latest source code with the following command, while
+exchanging the placeholder for one of the mirror URLs:
+
+    git clone MIRROR_URL
+
+#### Tags
 
 The final commit before each released gem version will be marked by a tag
 named like the version with a prefixed lower-case "v", as required by Semantic
